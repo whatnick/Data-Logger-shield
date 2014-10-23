@@ -4284,12 +4284,9 @@ type 0309, grid 2.5 mm</description>
 <part name="D2" library="Discrete" deviceset="LED*" device="'0603'" value="GREEN"/>
 <part name="C5" library="Discrete" deviceset="C*" device="-0603" value="0.1uF"/>
 <part name="C6" library="Discrete" deviceset="C*" device="-0603" value="0.1uF"/>
-<part name="C7" library="Discrete" deviceset="CAP*" device="-ELECTRO-A" value="100uF"/>
-<part name="C8" library="Discrete" deviceset="CAP*" device="-ELECTRO-A" value="100uF"/>
 <part name="U1" library="OPL" deviceset="DS1307ZN" device="-1900100P1"/>
 <part name="U2" library="OPL" deviceset="CJ1117-3.3" device="-1310190P1"/>
 <part name="U3" library="IC" deviceset="74V*125" device="PW" technology="HCT"/>
-<part name="K1" library="Discrete" deviceset="BUTTON-4P" device="-3.3X3.3" value="RESET"/>
 <part name="BAT1" library="Connector" deviceset="BAT-HOLDER" device="-SMD-1220" value="CR1220"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="R1" library="Discrete" deviceset="R*" device="-0603" value="1k"/>
@@ -4297,6 +4294,9 @@ type 0309, grid 2.5 mm</description>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R2" library="Discrete" deviceset="R*" device="-0603" value="1k"/>
 <part name="D4" library="Discrete" deviceset="LED*" device="'0603'" value="POWER"/>
+<part name="C1" library="Discrete" deviceset="CAP*" device="-ELECTRO-B" value="100uF"/>
+<part name="C2" library="Discrete" deviceset="CAP*" device="-ELECTRO-B" value="100uF"/>
+<part name="K1" library="Discrete" deviceset="BUTTON-4P" device="-6X6-SMD"/>
 </parts>
 <sheets>
 <sheet>
@@ -4374,8 +4374,6 @@ type 0309, grid 2.5 mm</description>
 <instance part="D2" gate="LED" x="165.1" y="160.02"/>
 <instance part="C5" gate="C" x="101.6" y="19.05" rot="R90"/>
 <instance part="C6" gate="C" x="67.564" y="19.05" rot="MR90"/>
-<instance part="C7" gate="C" x="93.98" y="19.05" rot="R270"/>
-<instance part="C8" gate="C" x="76.2" y="19.05" rot="R270"/>
 <instance part="U1" gate="U" x="110.49" y="149.606" rot="R270"/>
 <instance part="U2" gate="U" x="55.88" y="22.86"/>
 <instance part="U3" gate="A" x="166.116" y="88.9" rot="MR0"/>
@@ -4383,10 +4381,6 @@ type 0309, grid 2.5 mm</description>
 <instance part="U3" gate="B" x="165.1" y="99.06" rot="R180"/>
 <instance part="U3" gate="C" x="165.1" y="68.58" rot="MR0"/>
 <instance part="U3" gate="D" x="119.38" y="43.18" rot="MR0"/>
-<instance part="K1" gate="G$1" x="11.43" y="152.4" smashed="yes">
-<attribute name="NAME" x="10.16" y="157.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="11.43" y="157.48" size="1.778" layer="96"/>
-</instance>
 <instance part="BAT1" gate="G$1" x="134.62" y="135.382" rot="R90"/>
 <instance part="GND9" gate="1" x="214.63" y="170.18" rot="R90"/>
 <instance part="R1" gate="R" x="195.58" y="170.18"/>
@@ -4394,6 +4388,9 @@ type 0309, grid 2.5 mm</description>
 <instance part="GND10" gate="1" x="214.63" y="160.02" rot="R90"/>
 <instance part="R2" gate="R" x="195.58" y="160.02"/>
 <instance part="D4" gate="LED" x="205.74" y="160.02"/>
+<instance part="C1" gate="C" x="76.2" y="19.05" rot="R270"/>
+<instance part="C2" gate="C" x="93.98" y="19.05" rot="R270"/>
+<instance part="K1" gate="G$1" x="11.43" y="152.4"/>
 </instances>
 <busses>
 </busses>
@@ -4414,9 +4411,8 @@ type 0309, grid 2.5 mm</description>
 <wire x1="93.98" y1="27.94" x2="93.98" y2="22.86" width="0.1524" layer="91"/>
 <junction x="93.98" y="27.94"/>
 <pinref part="P+4" gate="1" pin="+5V"/>
-<pinref part="C7" gate="C" pin="+"/>
-<junction x="93.98" y="22.86"/>
 <pinref part="C5" gate="C" pin="2"/>
+<pinref part="C2" gate="C" pin="+"/>
 </segment>
 <segment>
 <wire x1="43.18" y1="22.86" x2="43.18" y2="27.94" width="0.1524" layer="91"/>
@@ -4473,9 +4469,9 @@ type 0309, grid 2.5 mm</description>
 <segment>
 <wire x1="101.6" y1="15.24" x2="93.98" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
-<pinref part="C7" gate="C" pin="-"/>
-<junction x="93.98" y="15.24"/>
 <pinref part="C5" gate="C" pin="1"/>
+<pinref part="C2" gate="C" pin="-"/>
+<junction x="93.98" y="15.24"/>
 </segment>
 <segment>
 <wire x1="55.88" y1="15.24" x2="67.564" y2="15.24" width="0.1524" layer="91"/>
@@ -4483,9 +4479,9 @@ type 0309, grid 2.5 mm</description>
 <pinref part="C6" gate="C" pin="1"/>
 <wire x1="67.564" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
 <junction x="67.564" y="15.24"/>
-<pinref part="C8" gate="C" pin="-"/>
 <pinref part="U2" gate="U" pin="GND"/>
 <junction x="55.88" y="15.24"/>
+<pinref part="C1" gate="C" pin="-"/>
 </segment>
 <segment>
 <wire x1="134.62" y1="73.66" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
@@ -4547,9 +4543,9 @@ type 0309, grid 2.5 mm</description>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="20.32" y1="144.78" x2="2.54" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="144.78" x2="2.54" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="B0"/>
 <wire x1="20.32" y1="144.78" x2="20.32" y2="149.86" width="0.1524" layer="91"/>
 <junction x="20.32" y="144.78"/>
+<pinref part="K1" gate="G$1" pin="B0"/>
 <pinref part="K1" gate="G$1" pin="B1"/>
 </segment>
 <segment>
@@ -4636,9 +4632,9 @@ type 0309, grid 2.5 mm</description>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <pinref part="C6" gate="C" pin="2"/>
 <junction x="67.564" y="22.86"/>
-<pinref part="C8" gate="C" pin="+"/>
 <pinref part="U2" gate="U" pin="OUT"/>
 <junction x="67.31" y="22.86"/>
+<pinref part="C1" gate="C" pin="+"/>
 </segment>
 <segment>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
