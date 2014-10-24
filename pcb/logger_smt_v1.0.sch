@@ -4301,7 +4301,7 @@ type 0309, grid 2.5 mm</description>
 <sheets>
 <sheet>
 <plain>
-<text x="162.56" y="7.62" size="2.54" layer="94">http://www.ladyada.net/make/logshield</text>
+<text x="162.56" y="7.62" size="2.54" layer="94">Derived from http://www.ladyada.net/make/logshield</text>
 <text x="149.86" y="25.4" size="2.54" layer="94">Released under CC 2.5, Attrib/Share-Alike</text>
 <text x="149.86" y="30.48" size="2.54" layer="94">Logger shield for Arduino</text>
 </plain>
